@@ -13,6 +13,6 @@ spec:
       metadata:
         timezone: Asia/Seoul
         # 분 시 일 월 요일
-        start: 00 08 * * *
-        end: 00 11 * * *
+        start: 00 18 * * *
+        end: 00 19 * * *
         desiredReplicas: '10'
