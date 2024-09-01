@@ -1,0 +1,18 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  namespace: default
+  name: keda
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx
+  triggers:
+    - type: cron
+      metadata:
+        timezone: Asia/Seoul
+        # 분 시 일 월 요일
+        start: 00 08 * * *
+        end: 00 11 * * *
+        desiredReplicas: '10'
